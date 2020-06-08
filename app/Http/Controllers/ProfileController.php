@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-    public function index($user)
+    public function index(User $user)
     {
         return view('profile', [
             'user' => $user,
