@@ -39,5 +39,7 @@ class PostController extends Controller
             'thumbnail' => $thumbnailPath ?? '',
             'content' => $data['content'],
         ]);
+
+        return redirect('/profile/' . auth()->user()->id);
     }
 }
