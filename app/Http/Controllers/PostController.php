@@ -26,14 +26,17 @@ class PostController extends Controller
             'content' => 'required',
         ]);
 
-        $thumbnailPath = request('thumbnail')->store('uploads', 'public');
-        $image = Image::make(public_path("storage/{$thumbnailPath}"))->fit(1200, 1200);
-        $image->save();
+        if(request('thumbnail'))
+        {
+            $thumbnailPath = request('thumbnail')->store('uploads', 'public');
+            $image = Image::make(public_path("storage/{$thumbnailPath}"))->fit(1200, 1200);
+            $image->save();
+        }
 
         auth()->user()->posts()->create([
             'title' => $data['title'],
             'description' => $data['description'],
-            'thumbnail' => $thumbnailPath,
+            'thumbnail' => $thumbnailPath ?? '',
             'content' => $data['content'],
         ]);
     }
