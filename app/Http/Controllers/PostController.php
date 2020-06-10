@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class PostController extends Controller
 {
@@ -25,6 +26,15 @@ class PostController extends Controller
             'content' => 'required',
         ]);
 
-        auth()->user()->posts()->create($data);
+        $thumbnailPath = request('thumbnail')->store('uploads', 'public');
+        $image = Image::make(public_path("storage/{$thumbnailPath}"))->fit(1200, 1200);
+        $image->save();
+
+        auth()->user()->posts()->create([
+            'title' => $data['title'],
+            'description' => $data['description'],
+            'thumbnail' => $thumbnailPath,
+            'content' => $data['content'],
+        ]);
     }
 }

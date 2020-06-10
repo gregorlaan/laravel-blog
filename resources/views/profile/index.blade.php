@@ -20,6 +20,8 @@
         <div class="col-md-4">
             @foreach ($user->posts as $post)
                 <div class="card">
+                    <img class="card-img-top" src="/storage/{{ $post->thumbnail }}" alt="{{ $post->title }}">
+
                     <div class="card-body">
                         <h4 class="card-title">{{ $post->title }}</h4>
                         <p class="card-text">{{ $post->description }}</p>
