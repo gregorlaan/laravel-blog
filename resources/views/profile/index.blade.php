@@ -6,7 +6,8 @@
         <div class="col-md-12">
             <div class="d-flex justify-content-between align-items-baseline">
                 <h1>{{ $user->username }}</h1>
-                <input name="" id="" class="btn btn-primary font-weight-bold" type="button" value="Add New Post">
+
+                <a href="/post/create" id="add-new-post" class="btn btn-primary font-weight-bold">Add New Post</a>
             </div>
 
             <p class="pt-4 font-weight-bold">{{ $user->profile->title}}</p>
