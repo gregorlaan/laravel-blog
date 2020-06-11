@@ -26,5 +26,5 @@ Route::get('/post/create', 'PostController@create');
 
 Route::post('/post', 'PostController@store');
 
-Route::get('/profile/{user}', 'ProfileController@index')->name('profile.show');
+Route::get('/profile/{user}', 'ProfileController@show')->name('profile.show');
 
