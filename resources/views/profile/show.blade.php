@@ -24,7 +24,10 @@
                         @endif
 
                         <div class="card-body">
-                            <h4 class="card-title">{{ $post->title }}</h4>
+                            <a href="/post/{{$post->id}}" id="post-{{$post->id}}" class="text-decoration-none">
+                                <h4 class="card-title">{{ $post->title }}</h4>
+                            </a>
+
                             <p class="card-text">{{ $post->description }}</p>
                         </div>
                     </div>
