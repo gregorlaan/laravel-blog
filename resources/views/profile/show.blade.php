@@ -6,12 +6,13 @@
     <div class="jumbotron text-center">
         <h1 class="display-3">{{ $user->username }}</h1>
 
-        <p class="lead">{{ $user->profile->title}}</p>
+        <p class="lead">{{ $user->profile->title }}</p>
         <hr class="my-2">
-        <p>{{ $user->profile->description}}</p>
+        <p>{{ $user->profile->description }}</p>
 
         <p class="lead">
             <a href="/post/create" id="add-new-post" class="btn btn-primary font-weight-bold">Add New Post</a>
+            <a href="/profile/{{$user->id}}/edit" id="add-new-post" class="btn btn-outline-primary font-weight-bold px-4">Edit Profile</a>
         </p>
     </div>
 

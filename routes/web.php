@@ -13,18 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/post/{post}', 'PostController@show');
 Route::get('/post/create', 'PostController@create');
+Route::get('/post/{post}', 'PostController@show');
 
 Route::post('/post', 'PostController@store');
 
 Route::get('/profile/{user}', 'ProfileController@show')->name('profile.show');
+Route::get('/profile/{user}/edit', 'ProfileController@edit')->name('profile.edit');
+Route::patch('/profile/{user}', 'ProfileController@update')->name('profile.update');
 
