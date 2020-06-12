@@ -15,7 +15,12 @@
                 <p class="lead text-secondary">{{ $post->description }}</p>
 
                 <div class="media">
-                    <div style="width: 50px; height: 50px; background: white;" class="border rounded-circle figure-img d-inline-block" alt="placeholder"></div>
+
+                    @if ($post->user->profile->image)
+                        <img width="50" height="50" class="border rounded-circle align-self-start" src="/storage/{{ $post->user->profile->image }}" alt="{{ $post->user->name }}">
+                    @else
+                        <div style="width: 50px; height: 50px; background: white;" class="border rounded-circle figure-img d-inline-block" alt="placeholder"></div>
+                    @endif
 
                     <div class="media-body ml-2">
                         <a href="/profile/{{$post->user->id}}" class="text-decoration-none">
