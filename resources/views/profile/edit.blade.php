@@ -10,11 +10,15 @@
             <div class="jumbotron text-center form-group">
 
                 <div class="d-flex flex-column justify-content-center">
-                    <label for="image" class="col-md-4 col-form-label mx-auto">
+                    <label id="profile-image" for="image" style="position: relative;" class="m-0 p-0 mx-auto">
+                        <div id="profile-image-overlay" style="width: 200px; height: 200px; opacity: 0; position: absolute; top: 0;" class="d-flex justify-content-center border rounded-circle bg-dark">
+                            <p class="lead align-self-center text-light m-0">Change Image</p>
+                        </div>
+
                         @if ($user->profile->image)
-                            <img width="200" height="200" class="img-thumbnail align-self-start mr-3" src="/storage/{{ $user->profile->image }}" alt="{{ $user->name }}">
+                            <img width="200" height="200" class="border rounded-circle img-thumbnail align-self-start" src="/storage/{{ $user->profile->image }}" alt="{{ $user->name }}">
                         @else
-                            <div style="width: 250px; height: 250px; background: white;" class="border rounded-circle figure-img d-inline-block" alt="placeholder"></div>
+                            <div style="width: 200px; height: 200px; background: white;" class="border rounded-circle figure-img d-inline-block" alt="placeholder"></div>
                         @endif
                     </label>
 

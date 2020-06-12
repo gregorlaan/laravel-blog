@@ -6,7 +6,7 @@
     <div class="jumbotron text-center">
         
         @if ($user->profile->image)
-            <img width="200" height="200" class="img-thumbnail align-self-start mr-3" src="/storage/{{ $user->profile->image }}" alt="{{ $user->name }}">
+            <img width="200" height="200" class="border rounded-circle img-thumbnail align-self-start" src="/storage/{{ $user->profile->image }}" alt="{{ $user->name }}">
         @else
             <div style="width: 250px; height: 250px; background: white;" class="border rounded-circle figure-img d-inline-block" alt="placeholder"></div>
         @endif

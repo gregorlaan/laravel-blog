@@ -10928,3 +10928,8 @@ a.text-dark:focus {
   }
 }
 
+#profile-image-overlay:hover {
+  opacity: 0.7 !important;
+  cursor: pointer;
+}
+
