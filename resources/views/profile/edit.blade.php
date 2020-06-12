@@ -48,7 +48,7 @@
 
                 <p class="lead">
                     <button type="submit" class="btn btn-success font-weight-bold px-4">Publish</button>
-                    <button type="button" onClick="window.history.back()" class="btn btn-danger font-weight-bold px-4">Cancel</button>
+                    <a type="button" class="btn btn-danger font-weight-bold px-4" href="/profile">Cancel</a>
                 </p>
             </div>
             
