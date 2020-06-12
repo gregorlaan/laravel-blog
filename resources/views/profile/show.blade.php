@@ -4,6 +4,13 @@
 <div class="container">
 
     <div class="jumbotron text-center">
+        
+        @if ($user->profile->image)
+            <img width="200" height="200" class="img-thumbnail align-self-start mr-3" src="/storage/{{ $user->profile->image }}" alt="{{ $user->name }}">
+        @else
+            <div style="width: 250px; height: 250px; background: white;" class="border rounded-circle figure-img d-inline-block" alt="placeholder"></div>
+        @endif
+
         <h1 class="display-3">{{ $user->username }}</h1>
 
         <p class="lead">{{ $user->profile->title }}</p>
