@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 
-        <form action="/profile/{{$user->id}}" enctype="multipart/form-data" method="post">
+        <form action="/profile/update" enctype="multipart/form-data" method="post">
             @method('PATCH')
             @csrf
 
@@ -31,7 +31,7 @@
 
                 <p class="lead">
                     <button type="submit" class="btn btn-success font-weight-bold px-4">Publish</button>
-                    <button type="" class="btn btn-danger font-weight-bold px-4">Cancel</button>
+                    <button type="button" onClick="window.history.back()" class="btn btn-danger font-weight-bold px-4">Cancel</button>
                 </p>
             </div>
             

@@ -22,7 +22,7 @@ Route::get('/post/{post}', 'PostController@show');
 
 Route::post('/post', 'PostController@store');
 
+Route::get('/profile/edit', 'ProfileController@edit')->name('profile.edit');
+Route::patch('/profile/update', 'ProfileController@update')->name('profile.update');
 Route::get('/profile/{user}', 'ProfileController@show')->name('profile.show');
-Route::get('/profile/{user}/edit', 'ProfileController@edit')->name('profile.edit');
-Route::patch('/profile/{user}', 'ProfileController@update')->name('profile.update');
 
