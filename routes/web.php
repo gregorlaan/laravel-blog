@@ -22,7 +22,8 @@ Route::get('/post/{post}', 'PostController@show');
 
 Route::post('/post', 'PostController@store');
 
-Route::get('/profile/edit', 'ProfileController@edit')->name('profile.edit');
-Route::patch('/profile/update', 'ProfileController@update')->name('profile.update');
+Route::get('/profile/edit', 'ProfileController@edit')->name('profile.edit')->middleware('auth');
+Route::patch('/profile/update', 'ProfileController@update')->name('profile.update')->middleware('auth');
 Route::get('/profile/{user}', 'ProfileController@show')->name('profile.show');
+Route::get('/profile', 'ProfileController@showMyProfile')->name('profile.showMyProfile')->middleware('auth');
 
