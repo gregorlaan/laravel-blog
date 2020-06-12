@@ -8,6 +8,23 @@
             @csrf
 
             <div class="jumbotron text-center form-group">
+
+                <div class="d-flex flex-column justify-content-center">
+                    <label for="image" class="col-md-4 col-form-label mx-auto">
+                        @if ($user->profile->image)
+                            <img width="200" height="200" class="img-thumbnail align-self-start mr-3" src="/storage/{{ $user->profile->image }}" alt="{{ $user->name }}">
+                        @else
+                            <div style="width: 250px; height: 250px; background: white;" class="border rounded-circle figure-img d-inline-block" alt="placeholder"></div>
+                        @endif
+                    </label>
+
+                    <input type="file" class="form-control-file d-none" id="image" name="image">
+
+
+                    @if ($errors->has('image'))
+                        <strong>{{ $errors->first('image') }}</strong>
+                    @endif
+                </div>
             
                 <h1 class="display-3">{{ $user->username }}</h1>
 
