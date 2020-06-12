@@ -32,7 +32,7 @@ class ProfileController extends Controller
         $data = request()->validate([
             'title' => 'required',
             'description' => 'required',
-            'image' => '',
+            'image' => 'image',
         ]);
 
         $user = auth()->user();
