@@ -24,7 +24,11 @@
             </p>
         @elsecannot('update', $user->profile)
             <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}">
-                <button type="button" style="cursor: not-allowed" class="btn btn-secondary font-weight-bold"><span>Follow</span></button>
+                @if ($follows)
+                    <button type="button" style="cursor: not-allowed" class="btn btn-secondary font-weight-bold"><span>Unfollow</span></button>
+                @else
+                    <button type="button" style="cursor: not-allowed" class="btn btn-secondary font-weight-bold"><span>Follow</span></button>
+                @endif
             </follow-button>
         @endcan
 
