@@ -4,6 +4,21 @@
 <div class="container">
 
     <div class="jumbotron text-center">
+
+        <ul class="list-group list-group-horizontal-md d-flex justify-content-center mb-4">
+            <li class="list-group-item">
+                <b>{{ $user->profile->followers->count() }}</b>
+                Followers
+            </li>
+            <li class="list-group-item">
+                <b>{{ $user->posts->count() }}</b>
+                Posts
+            </li>
+            <li class="list-group-item">
+                <b>{{ $user->following->count() }}</b>
+                Following
+            </li>
+        </ul>
         
         @if ($user->profile->image)
             <img width="200" height="200" class="border rounded-circle img-thumbnail align-self-start" src="/storage/{{ $user->profile->image }}" alt="{{ $user->name }}">
