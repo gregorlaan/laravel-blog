@@ -22,7 +22,7 @@ class PostController extends Controller
     {
         $users = auth()->user()->following()->pluck('profiles.user_id');
 
-        $posts = Post::whereIn('user_id', $users)->latest()->get();
+        $posts = Post::whereIn('user_id', $users)->latest()->paginate(5);
 
         return view('post.index', compact('posts'));
     }
