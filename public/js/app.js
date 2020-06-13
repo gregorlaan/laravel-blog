@@ -1926,8 +1926,6 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.post('/follow/' + this.userId).then(function (response) {
-        console.log(response.data.attached.length);
-        console.log(response.data.detached.length);
         if (response.data.attached.length) _this.status = true;else if (response.data.detached.length) _this.status = false;
       })["catch"](function (error) {
         if (error.response && error.response.status == 401) {

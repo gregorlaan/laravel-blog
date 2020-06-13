@@ -18,9 +18,6 @@
             FollowUser() {
                 axios.post('/follow/' + this.userId)
                     .then(response => {
-                        console.log(response.data.attached.length);
-                        console.log(response.data.detached.length);
-
                         if(response.data.attached.length)
                             this.status = true;
                         else if(response.data.detached.length)
