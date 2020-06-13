@@ -22,6 +22,8 @@
                 <a href="/post/create" id="add-new-post" class="btn btn-primary font-weight-bold">Add New Post</a>
                 <a href="/profile/edit" id="add-new-post" class="btn btn-outline-primary font-weight-bold px-4">Edit Profile</a>
             </p>
+        @elsecannot('update', $user->profile)
+            <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-button>
         @endcan
 
     </div>

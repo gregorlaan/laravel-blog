@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/follow/{user}', 'FollowController@store');
 
 Route::get('/post/create', 'PostController@create');
 Route::get('/post/{post}', 'PostController@show');
