@@ -25,7 +25,7 @@
         @elsecannot('update', $user->profile)
             <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}">
                 @if ($follows)
-                    <button type="button" style="cursor: not-allowed" class="btn btn-secondary font-weight-bold"><span>Unfollow</span></button>
+                    <button type="button" style="cursor: not-allowed" class="btn btn-outline-secondary font-weight-bold"><span>Unfollow</span></button>
                 @else
                     <button type="button" style="cursor: not-allowed" class="btn btn-secondary font-weight-bold"><span>Follow</span></button>
                 @endif
