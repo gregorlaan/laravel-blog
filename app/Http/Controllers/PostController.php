@@ -18,6 +18,15 @@ class PostController extends Controller
         return view('post.create');
     }
 
+    public function index()
+    {
+        $users = auth()->user()->following()->pluck('profiles.user_id');
+
+        $posts = Post::whereIn('user_id', $users)->latest()->get();
+
+        return view('post.index', compact('posts'));
+    }
+
     public function store()
     {
         $data = request()->validate([
