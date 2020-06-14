@@ -20,6 +20,8 @@ Route::post('/follow/{user}', 'FollowController@store');
 
 Route::get('/', 'PostController@index');
 Route::get('/post/create', 'PostController@create');
+Route::patch('/post/{post}', 'PostController@update');
+Route::get('/post/{slug}/edit', 'PostController@edit');
 Route::get('/post/{slug}', 'PostController@show');
 
 Route::post('/post', 'PostController@store');

@@ -10,8 +10,7 @@
             @endif
 
             <div class="media-body">
-                <h1>{{ $post->title }}</h1>
-                <h3>{{ $post->slug }}</h1>
+                <h1 title="{{ $post->slug }}">{{ $post->title }}</h1>
                 <hr class="my-3">
                 <p class="lead text-secondary">{{ $post->description }}</p>
 

@@ -36,7 +36,7 @@
         @can('update', $user->profile)
             <p class="lead">
                 <a href="/post/create" id="add-new-post" class="btn btn-primary font-weight-bold">Add New Post</a>
-                <a href="/profile/edit" id="add-new-post" class="btn btn-outline-primary font-weight-bold px-4">Edit Profile</a>
+                <a href="/profile/edit" id="edit-profile" class="btn btn-outline-primary font-weight-bold px-4">Edit Profile</a>
             </p>
         @elsecannot('update', $user->profile)
             <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}">
@@ -59,9 +59,15 @@
                     @endif
 
                     <div class="card-body">
-                        <a href="/post/{{$post->slug}}" id="post-{{$post->id}}" class="text-decoration-none">
-                            <h4 class="card-title">{{ $post->title }}</h4>
-                        </a>
+                        <div class="d-flex">
+                            <a href="/post/{{$post->slug}}" id="post-{{$post->id}}" class="text-decoration-none mr-auto">
+                                <h4 class="card-title">{{ $post->title }}</h4>
+                            </a>
+
+                            @can('update', $post)
+                                <a href="/post/{{$post->slug}}/edit" id="edit-post-{{$post->id}}" class="btn btn-sm btn-primary font-weight-bold mb-auto">Edit Post</a>
+                            @endcan
+                        </div>
 
                         <p class="card-text">{{ $post->description }}</p>
                     </div>
