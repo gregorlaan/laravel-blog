@@ -11,7 +11,7 @@
                 @endif
 
                 <div class="media-body">
-                    <a href="/post/{{$post->id}}" class="text-decoration-none">
+                    <a href="/post/{{$post->slug}}" class="text-decoration-none">
                         <h1>{{ $post->title }}</h1>
                     </a>
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use App\Services\Slug;
 
 class PostController extends Controller
 {
@@ -45,6 +46,7 @@ class PostController extends Controller
 
         auth()->user()->posts()->create([
             'title' => $data['title'],
+            'slug' => Slug::getUniqueSlug($data['title']),
             'description' => $data['description'],
             'thumbnail' => $thumbnailPath ?? '',
             'content' => $data['content'],
@@ -53,8 +55,10 @@ class PostController extends Controller
         return redirect('/profile/' . auth()->user()->id);
     }
 
-    public function show(Post $post)
+    public function show($slug)
     {
+        $post = Post::where('slug', $slug)->firstOrFail(); 
+
         return view('post.show', compact('post'));
     }
 }

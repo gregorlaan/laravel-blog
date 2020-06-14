@@ -11,6 +11,7 @@
 
             <div class="media-body">
                 <h1>{{ $post->title }}</h1>
+                <h3>{{ $post->slug }}</h1>
                 <hr class="my-3">
                 <p class="lead text-secondary">{{ $post->description }}</p>
 

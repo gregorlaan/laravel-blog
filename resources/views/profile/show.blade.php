@@ -59,7 +59,7 @@
                     @endif
 
                     <div class="card-body">
-                        <a href="/post/{{$post->id}}" id="post-{{$post->id}}" class="text-decoration-none">
+                        <a href="/post/{{$post->slug}}" id="post-{{$post->id}}" class="text-decoration-none">
                             <h4 class="card-title">{{ $post->title }}</h4>
                         </a>
 
