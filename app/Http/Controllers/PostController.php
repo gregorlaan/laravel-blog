@@ -30,9 +30,9 @@ class PostController extends Controller
 
     public function edit($slug)
     {
-        $this->authorize('update', $post);
-        
         $post = Post::where('slug', $slug)->firstOrFail();
+
+        $this->authorize('update', $post);
 
         return view('post.edit', compact('post'));
     }
