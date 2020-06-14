@@ -17,15 +17,15 @@
 
         <ul class="list-group list-group-horizontal-md d-flex justify-content-center mb-4">
             <li class="list-group-item">
-                <b>{{ $user->profile->followers->count() }}</b>
+                <b>{{ $user->stats['followers_count'] }}</b>
                 Followers
             </li>
             <li class="list-group-item">
-                <b>{{ $user->posts->count() }}</b>
+                <b>{{ $user->stats['posts_count'] }}</b>
                 Posts
             </li>
             <li class="list-group-item">
-                <b>{{ $user->following->count() }}</b>
+                <b>{{ $user->stats['following_count'] }}</b>
                 Following
             </li>
         </ul>
