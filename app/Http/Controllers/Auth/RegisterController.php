@@ -23,6 +23,7 @@ class RegisterController extends Controller
     */
 
     use RegistersUsers;
+    public const HOME = '/';
 
     /**
      * Where to redirect users after registration.
