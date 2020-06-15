@@ -10,8 +10,18 @@
             @endif
 
             <div class="media-body">
-                <h1 title="{{ $post->slug }}">{{ $post->title }}</h1>
+                <div class="d-flex align-items-center">
+                    <a href="/post/{{$post->slug}}" id="post-{{$post->id}}" class="text-decoration-none mr-auto">
+                        <h1 title="{{ $post->slug }}">{{ $post->title }}</h1>
+                    </a>
+
+                    @can('update', $post)
+                        <a href="/post/{{$post->slug}}/edit" id="edit-post-{{$post->id}}" class="btn btn-sm btn-primary font-weight-bold">Edit Post</a>
+                    @endcan
+                </div>
+
                 <hr class="my-3">
+
                 <p class="lead text-secondary">{{ $post->description }}</p>
 
                 <div class="media">
