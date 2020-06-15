@@ -45,7 +45,7 @@
         </div>
     </div>
 
-    <div class="ql-editor">{!! $post->content !!}</div>
+    <div class="ql-snow"><div class="ql-editor">{!! $post->content !!}</div></div>
 
 </div>
 @endsection
