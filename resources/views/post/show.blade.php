@@ -35,7 +35,7 @@
         </div>
     </div>
 
-    <p class="lead">{{ $post->content }}</p>
+    <div class="ql-editor">{!! $post->content !!}</div>
 
 </div>
 @endsection

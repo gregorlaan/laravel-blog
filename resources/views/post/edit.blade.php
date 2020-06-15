@@ -61,17 +61,7 @@
                     @enderror
                 </div>
 
-                <div class="form-group row">
-                    <label for="content" class="col-form-label">{{ __('Content') }}</label>
-
-                    <textarea rows="3" id="content" class="form-control @error('content') is-invalid @enderror" name="content">{{ old('content') ?? $post->content }}</textarea>
-
-                    @error('content')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
+                <quill-component id="content" name="content" label="Content" content="{{ old('content') ?? $post->content }}"></quill-component>
 
                 <div class="form-group row">
                     <button type="submit" class="btn btn-success font-weight-bold px-4">Update</button>

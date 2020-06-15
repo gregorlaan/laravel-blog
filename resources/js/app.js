@@ -5,6 +5,7 @@
  */
 
 require('./bootstrap');
+import Vue2Editor from "vue2-editor";
 
 window.Vue = require('vue');
 
@@ -19,7 +20,9 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
+Vue.use(Vue2Editor);
 Vue.component('follow-button', require('./components/FollowButton.vue').default);
+Vue.component('quill-component', require('./components/QuillComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
